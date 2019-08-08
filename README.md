@@ -32,11 +32,11 @@ Este listado lo mostraremos en la parte izquierda de la pantalla, debajo del for
 Para terminar, si volvemos a realizar una nueva búsqueda, los favoritos se irán acumulando en
 nuestra lista.
 
-  -queryselectorall a cholón.  event y currentevent
-  X-poner un listener sobre los de la lista.
+6  X-poner un listener sobre los de la lista.
   X-generar una función nueva(showFavorite) que seleccione los elementos de la lista
   X-que cuando los pulses se añada una clase que los marque como favoritos (y cambie su scss)
-  X-crear un array con las series seleccionadas
+
+7 X-crear un array con las series favoritas seleccionadas
   X-que el array se muestre en pantalla debajo del formulario
   -que el array incluya la imagen
   -inclur array + imagen en el dom bien
@@ -46,11 +46,12 @@ nuestra lista.
 
 
 
-7- guardarlo en localStorage
+8- guardarlo en localStorage
 
-8-maquetación
+9-maquetación
 
-9-Xborrar favoritos
-10-cambiar el contenido de alt picture en función del resultado? sé hacer eso?
+10-borrar favoritos
+11-cambiar el contenido de alt picture en función del resultado? sé hacer eso?
 
 BORRAR VALUE DEL INPUT POR DEFECTO
+REVISAR LOS CONSOLE LOG Y EL CODIGO COMENTADO
