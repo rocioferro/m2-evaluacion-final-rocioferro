@@ -39,8 +39,9 @@ nuestra lista.
 7 X-crear un array con el nombre de las series favoritas seleccionadas
   X-crear un array con la foto de las series favoritas seleccionadas
   X-que el array se muestre en pantalla debajo del formulario
-  -inclur array + imagen en el dom bien
-  -
+  x-hacer que el array no se repita si ya ha sido seleccionado
+  X-inclur array + imagen en el dom
+  -hacer que se muestren todas las que añado en el array de favs con un for
   -Para terminar, si volvemos a realizar una nueva búsqueda, los favoritos se irán acumulando en
 nuestra lista.
 
