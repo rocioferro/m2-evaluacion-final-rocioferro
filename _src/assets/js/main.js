@@ -14,7 +14,8 @@ function showSerie () {
   fetch(endpoint)
     .then (response => response.json())
     .then (data => {
-      console.log(data);
+      for (const item of data) {
+      console.log(item.show.name, item.show.image); }
     })
 
 
