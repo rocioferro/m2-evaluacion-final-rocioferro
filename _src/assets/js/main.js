@@ -11,23 +11,27 @@ let favSeries = [];
 const favContainer = document.querySelector('.favseries-container');
 
 function pickFavorite(event) {
-  const currentSerie =event.currentTarget;
+  const currentSerie = event.currentTarget;
   const currentSerieName = currentSerie.getAttribute('data-name');
 
 
   currentSerie.classList.toggle('favorite');
-  if (currentSerie.classList.contains('favorite')===true) {
-    if (favSeries.includes(currentSerieName)!==true) {
-    favSeries.push(currentSerieName);
-    favContainer.innerHTML = favSeries;}
+  if (currentSerie.classList.contains('favorite') === true) {
+    if (favSeries.includes(currentSerieName) !== true) {
+      favSeries.push(currentSerieName);
+      favContainer.innerHTML = favSeries;
+    }
 
   }
   else {
-    // sacar del array
+    const index = favSeries.indexOf(currentSerieName);
+    if (index > -1) {
+      favSeries.splice(index, 1);
+    }
   }
 }
 
-function startFavorites () {
+function startFavorites() {
   const listElements = document.querySelectorAll('.li-elements');
 
   for (const item of listElements) {
@@ -56,7 +60,7 @@ function showSerie() {
 
         list.innerHTML = listSeries;
 
-        startFavorites ();
+        startFavorites();
 
       }
     })
