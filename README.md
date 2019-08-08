@@ -11,14 +11,14 @@ XX1- html básico.
 2-
 Xcrear un listener en el botón
 Xse redirige hacia lo escrito en el input
--hacer un fetch. recoge lo escrito en el input y con eso rellena el enlace del fetch (hacer dos variables: una para la api en si y otra para el contenido. luego juntarlas en la url del fetch)
+Xhacer un fetch. recoge lo escrito en el input y con eso rellena el enlace del fetch (hacer dos variables: una para la api en si y otra para el contenido. luego juntarlas en la url del fetch)
 
-3-que lo que se obtenga de la api se pinte dentro de la ul en varios li (con clase + h2 + img) y se pinte en el dom (con innerhtml seguramente).
--queryselectorall a cholón
-  -usar bucles para recorrer el array/objetos/whatever. tomar de array name + image-original
+3Xque lo que se obtenga de la api se pinte dentro de la ul en varios li (con clase + h2 + img) y se pinte en el dom (con innerhtml seguramente).
+
+Xusar bucles para recorrer el array/objetos/whatever. tomar de array name + image-original
   donde se introducen los elementos en dom, se inicia con una variable vacía para que no se acumulen las búsquedas, con un *=
 
-4- series sin imagen: poner imagen de relleno nuestra (con un if. si no existe X, poner X otra cosa. y en esa X otra cosa poner el titulo de la serie dentro?) event y currentevent aquí?
+4- series sin imagen: poner imagen de relleno nuestra (con un if. si no existe X, poner X otra cosa. y en esa X otra cosa poner el titulo de la serie dentro?) event y currentevent aquí? -queryselectorall a cholón
 
 
 4- que el usuario pueda seleccionar los elementos favoritos (ej 6 o 7 de fin de semana)
