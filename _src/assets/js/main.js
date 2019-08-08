@@ -8,8 +8,7 @@ const query = input.value;
 const endpoint = api + query;
 const altPicture = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 
-// creamos listener para llamar al botón
-//que lo recogido en el input se pinte en consola cuando aprietas el botón
+
 
 function showSerie() {
   let listSeries = '';
@@ -35,5 +34,10 @@ function showSerie() {
 }
 
 
+function pickFavorite () {
+  console.log('pick');
+}
 
+list.addEventListener('click', pickFavorite);
 button.addEventListener('click', showSerie);
+

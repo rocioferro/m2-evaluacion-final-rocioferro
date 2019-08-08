@@ -15,23 +15,34 @@ Xhacer un fetch. recoge lo escrito en el input y con eso rellena el enlace del f
 
 3Xque lo que se obtenga de la api se pinte dentro de la ul en varios li (con clase + h2 + img) y se pinte en el dom (con innerhtml seguramente).
 
-Xusar bucles para recorrer el array/objetos/whatever. tomar de array name + image-original
-  donde se introducen los elementos en dom, se inicia con una variable vacía para que no se acumulen las búsquedas, con un *=
+4Xusar bucles para recorrer el array/objetos/whatever. tomar de array name + image-original
+  donde se introducen los elementos en dom, se inicia con una variable vacía para que no se acumulen las búsquedas, con un +=
 
-4- series sin imagen: poner imagen de relleno nuestra (con un if. si no existe X, poner X otra cosa. y en esa X otra cosa poner el titulo de la serie dentro?) event y currentevent aquí? -queryselectorall a cholón
+5X series sin imagen: poner imagen de relleno nuestra (con un if. si no existe X, poner X otra cosa. y en esa X otra cosa poner el titulo de la serie dentro?)
 
 
-4- que el usuario pueda seleccionar los elementos favoritos (ej 6 o 7 de fin de semana)
+6-
+-que el usuario pueda seleccionar los elementos favoritos (ej 6 o 7 de fin de semana)
 Una vez aparecen los resultados de búsqueda, podremos indicar cuáles son nuestras series
 favoritas. Para ello, al hacer clic sobre un resultado el color de fondo y el de fuente se
 intercambian.
-event + currentevent
+
 Además, debes crear un listado (array) con las series favoritas que almacenamos en una variable.
 Este listado lo mostraremos en la parte izquierda de la pantalla, debajo del formulario de búqueda.
 Para terminar, si volvemos a realizar una nueva búsqueda, los favoritos se irán acumulando en
 nuestra lista.
 
-5- guardarlo en localStorage
+  -queryselectorall a cholón.  event y currentevent
+  -poner un listener sobre los de la lista.
+  -generar una función nueva(showFavorite) y meterla después en la primera(showSerie). ojocuidao que igual hay que definir los elementos de nuevo.
+  -que cuando los pulses se añada una clase que los marque como favoritos (y cambie su scss)
+  -crear un array con las series seleccionadas
+  -que el array se muestre en pantalla debajo del formulario
+  -Para terminar, si volvemos a realizar una nueva búsqueda, los favoritos se irán acumulando en
+nuestra lista.
+
+
+7- guardarlo en localStorage
 
 6-maquetación
 
