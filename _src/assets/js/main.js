@@ -12,41 +12,18 @@ const favContainer = document.querySelector('.favseries-container');
 
 function pickFavorite(event) {
   const currentSerie =event.currentTarget;
+  const currentSerieName = currentSerie.getAttribute('data-name');
+
 
   currentSerie.classList.toggle('favorite');
-
-
   if (currentSerie.classList.contains('favorite')) {
-    seriesArr = currentSerie.getAttribute('data-name');
-    favContainer.innerHTML += seriesArr;
+    seriesArr.push(currentSerieName);
+    favContainer.innerHTML = seriesArr;
+
   }
   else {
     // sacar del array
   }
-  // const seriesArr = JSON.stringify(currentSerie);
-  // console.log(seriesArr);
-
-
-  // const seriesArr = [];
-  // for (const elements of currentSerie) {
-
-  // }
-  // seriesArr = currentSerie;
-  // // let seriesArr = [];
-  // for (let i = 0; i<currentSerie.length; i++) {
-  //   seriesArr[i] = currentSerie[i].seriesArr;
-  //   console.log(seriesArr[i]);
-  // }
-
-  //   let seriesArr = [];
-//   for (let i = 0; i < currentserie.length; i++) {
-//     seriesArr[i] = currentSerie[i].seriesArr;
-//   }
-//   for (let i = 0; i < element.length; i++) {
-//     if (element[i].classList.contains('favorite') { classList.toggle('favorite') }
-
-//   }
-// }
 }
 
 function startFavorites () {
@@ -73,7 +50,7 @@ function showSerie() {
         listSeries +=
           `<li class="li-elements" data-name="${itemName}">
              <h2 class="show-name">${itemName}</h2>
-             <img class="show-img" src=${itemImage}>
+             <img class="show-img" src=${itemImage} alt="${itemName}">
            </li>`;
 
         list.innerHTML = listSeries;
