@@ -10,9 +10,16 @@ const altPicture = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 
 function pickFavorite(event) {
   const currentSerie =event.currentTarget;
-  console.log(currentSerie);
+  currentSerie.classList.toggle('favorite');
 }
 
+function startFavorites () {
+  const listElements = document.querySelectorAll('.li-elements');
+
+  for (const item of listElements) {
+    item.addEventListener('click', pickFavorite);
+  }
+}
 
 function showSerie() {
   let listSeries = '';
@@ -35,24 +42,13 @@ function showSerie() {
 
         list.innerHTML = listSeries;
 
-        const listElements = document.querySelectorAll('.li-elements');
-        for (const item of listElements) {
-          item.addEventListener('click', pickFavorite);
-        }
-
-
+        startFavorites ();
 
       }
     })
 
 
 }
-
-
-// function pickFavorite() {
-//   console.log('li');
-
-// }
 
 
 button.addEventListener('click', showSerie);

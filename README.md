@@ -34,8 +34,8 @@ nuestra lista.
 
   -queryselectorall a cholón.  event y currentevent
   X-poner un listener sobre los de la lista.
-  X-generar una función nueva(showFavorite)
-  -que cuando los pulses se añada una clase que los marque como favoritos (y cambie su scss)
+  X-generar una función nueva(showFavorite) que seleccione los elementos de la lista
+   -que cuando los pulses se añada una clase que los marque como favoritos (y cambie su scss)
   -crear un array con las series seleccionadas
   -que el array se muestre en pantalla debajo del formulario
   -Para terminar, si volvemos a realizar una nueva búsqueda, los favoritos se irán acumulando en
