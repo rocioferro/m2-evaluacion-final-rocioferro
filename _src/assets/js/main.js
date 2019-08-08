@@ -23,9 +23,16 @@ function showSerie() {
         } else {
           itemImage = item.show.image.medium;
         }
-        listSeries += `<li class="li-elements><h2 class="show-name">${itemName}</h2><img class="show-img" src=${itemImage}></li>`;
+        listSeries += `<li class="li-elements"><h2 class="show-name">${itemName}</h2><img class="show-img" src=${itemImage}></li>`;
 
         list.innerHTML = listSeries;
+        const listElements = document.querySelectorAll('.li-elements');
+        console.log(listElements);
+        listElements.addEventListener('click', pickFavorite);
+        function pickFavorite () {
+          console.log('what');
+        }
+
 
       }
     })
@@ -34,10 +41,25 @@ function showSerie() {
 }
 
 
-function pickFavorite () {
-  console.log('pick');
-}
+// function pickFavorite() {
+//   console.log('li');
 
-list.addEventListener('click', pickFavorite);
+// }
+
+
 button.addEventListener('click', showSerie);
 
+
+
+
+// let liElement = [];
+
+//   let element = [];
+//   for (let i = 0; i < list.length; i++) {
+//     element[i] = list[i].element;
+//   }
+//   for (let i = 0; i < element.length; i++) {
+//     if (element[i].classList.contains('favorite') { classList.toggle('favorite') }
+
+//   }
+// }

@@ -33,19 +33,21 @@ Para terminar, si volvemos a realizar una nueva búsqueda, los favoritos se irá
 nuestra lista.
 
   -queryselectorall a cholón.  event y currentevent
-  -poner un listener sobre los de la lista.
-  -generar una función nueva(showFavorite) y meterla después en la primera(showSerie). ojocuidao que igual hay que definir los elementos de nuevo.
+  X-poner un listener sobre los de la lista.
+  X-generar una función nueva(showFavorite)
   -que cuando los pulses se añada una clase que los marque como favoritos (y cambie su scss)
   -crear un array con las series seleccionadas
   -que el array se muestre en pantalla debajo del formulario
   -Para terminar, si volvemos a realizar una nueva búsqueda, los favoritos se irán acumulando en
 nuestra lista.
+  -meter la funcion showfavorite dentro de la primera(showSerie)? hace falta? o con el listener ya funciona? ojocuidao que igual hay que definir los elementos de nuevo.
 
 
 7- guardarlo en localStorage
 
-6-maquetación
+8-maquetación
 
-7-borrar favoritos
+9-borrar favoritos
+10-cambiar el contenido de alt picture en función del resultado? sé hacer eso?
 
 BORRAR VALUE DEL INPUT POR DEFECTO
