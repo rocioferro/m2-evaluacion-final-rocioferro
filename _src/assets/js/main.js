@@ -13,47 +13,42 @@ const favContainer = document.querySelector('.favseries-container');
 function pickFavorite(event) {
   let listFavs = '';
   const currentSerie = event.currentTarget;
-//  obtener el titulo para el array de favoritos
-  const showCurrentName = currentSerie.getAttribute('data-name');
+  //  obtener el titulo para el array de favoritos
+  const showCurrentName = currentSerie.querySelector('.show-name').innerHTML;
   // // obtener la foto para el array de favoritos
   const showCurrentImage = currentSerie.querySelector('.show-img').src;
-
-  //  for (const item of allImages) {
-  //   console.log(item);
+  const myObjects = { 'name': showCurrentName, 'image': showCurrentImage };
 
   currentSerie.classList.toggle('favorite');
- if (currentSerie.classList.contains('favorite') === true) {
-  //   // lo guardo en el array solo si no existe
-      if (favSeries.includes(showCurrentName) === false ) {
-    favSeries.push(showCurrentName);
-    favSeries.push(showCurrentImage);
-    // favContainer.innerHTML = favSeries;
-    // console.log(favSeries);
-      }
-   }
-  else {
-    // REVISAR ESTE CODIGO. NO ME LO QUITA EN EL DOM;ASOCIARLO a las variables
-    const indexSerie = favSeries.indexOf(showCurrentName);
-    if (indexSerie > -1) {
-      favSeries.splice(indexSerie, 1);
+  if (currentSerie.classList.contains('favorite')) {
+    //   // lo guardo en el array solo si no existe
+    if (favSeries.includes(showCurrentName) === false) {
+      favSeries.push(myObjects);
     }
-    const indexImg = favSeries.indexOf(showCurrentImage);
-    if (indexImg > -1) {
-      favSeries.splice(indexImg, 1);
+    else {
+      // REVISAR ESTE CODIGO. NO ME LO QUITA EN EL DOM;ASOCIARLO a las variables
+      const indexSerie = favSeries.indexOf(showCurrentName);
+      if (indexSerie > -1) {
+        favSeries.splice(indexSerie, 1);
+      }
+      const indexImg = favSeries.indexOf(showCurrentImage);
+      if (indexImg > -1) {
+        favSeries.splice(indexImg, 1);
+      }
+    }
+    for (const item of favSeries) {
+      listFavs +=
+      `<ul class="fav-list">
+          <li class="fav-elements">
+             <h3 class="fav-name">${item.name}</h2>
+             <img class="fav-img" src=${item.image} alt="${showCurrentName}">
+           </li>
+        </ul>`;
+
+      favContainer.innerHTML = listFavs;
     }
   }
-  listFavs +=
-        `<ul class="fav-list">
-          <li class="fav-elements">
-             <h3 class="fav-name">${showCurrentName}</h2>
-             <img class="fav-img" src=${showCurrentImage} alt="${showCurrentName}">
-           </li>
-        </ul>`
-
-
-  favContainer.innerHTML = listFavs;
- }
-
+}
 function startFavorites() {
   const listElements = document.querySelectorAll('.li-elements');
 
@@ -76,7 +71,7 @@ function showSerie() {
           itemImage = item.show.image.medium;
         }
         listSeries +=
-          `<li class="li-elements" data-name="${itemName}">
+          `<li class="li-elements" id="name-id" data-name="${itemName}">
              <h2 class="show-name" id="item-name">${itemName}</h2>
              <img class="show-img" data-image="${itemImage}" src=${itemImage} alt="${itemName}">
            </li>`;
