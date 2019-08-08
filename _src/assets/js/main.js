@@ -7,7 +7,7 @@ const api = 'http://api.tvmaze.com/search/shows?q=';
 const query = input.value;
 const endpoint = api + query;
 const altPicture = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
-let seriesArr = [];
+let favSeries = [];
 const favContainer = document.querySelector('.favseries-container');
 
 function pickFavorite(event) {
@@ -16,9 +16,10 @@ function pickFavorite(event) {
 
 
   currentSerie.classList.toggle('favorite');
-  if (currentSerie.classList.contains('favorite')) {
-    seriesArr.push(currentSerieName);
-    favContainer.innerHTML = seriesArr;
+  if (currentSerie.classList.contains('favorite')===true) {
+    if (favSeries.includes(currentSerieName)!==true) {
+    favSeries.push(currentSerieName);
+    favContainer.innerHTML = favSeries;}
 
   }
   else {
