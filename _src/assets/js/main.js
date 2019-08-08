@@ -11,53 +11,49 @@ let favSeries = [];
 const favContainer = document.querySelector('.favseries-container');
 
 function pickFavorite(event) {
-  let myFavs = '';
   const currentSerie = event.currentTarget;
+//  obtener el titulo para el array de favoritos
+  const showCurrentSerie = currentSerie.getAttribute('data-name');
+  // // obtener la foto para el array de favoritos
+  const showCurrentImage = currentSerie.querySelector('.show-img').src;
 
-  const currentSerieName = currentSerie.getAttribute('data-name');
-  // obtener la foto para el array de favoritos
-  const favoriteImg = document.querySelectorAll('.show-img');
-   for (const fotos of favoriteImg) {
-    console.log(fotos.currentSrc)
-    const fotoEscogida = fotos.currentSrc;
-    const finalQuizas = fotoEscogida.currentSerie;
-    console.log(finalQuizas);
-    }
+  //  for (const item of allImages) {
+  //   console.log(item);
 
 
-  }
 
   currentSerie.classList.toggle('favorite');
-  if (currentSerie.classList.contains('favorite') === true) {
-    // lo guardo en el array solo si no existe
-    // if ()
-    favSeries.push(currentSerieName);
-    favSeries.push(currentSerieImg);
+ if (currentSerie.classList.contains('favorite') === true) {
+  //   // lo guardo en el array solo si no existe
+      if (favSeries.includes(showCurrentSerie) === false ) {
+    favSeries.push(showCurrentSerie);
+    favSeries.push(showCurrentImage);
     favContainer.innerHTML = favSeries;
     console.log(favSeries);
-  }
-  else {
+      }
+   }
+  // else {
     // REVISAR ESTE CODIGO. NO ME LO QUITA, SOLO EVITA QUE SE REPITA.
-    // const index = favSeries.indexOf(currentSerieName);
+    // const index = favSeries.indexOf(showCurrentSerie);
     // if (index > -1) {
     //   favSeries.splice(index, 1);
     // }
-    // const indexImg = favSeries.indexOf(currentSerieImg);
+    // const indexImg = favSeries.indexOf(showCurrentImage);
     // if (index > -1) {
     //   favSeries.splice(indexImg, 1);
     // }
-  }
+  //}
   // myFavs +=
   //   `<ul class="fav-list>
   //     <li class="fav-element">
-  //      <p class="fav-name">${currentSerieName}</p>
-  //       <img class="fav-img" src=${currentSerieImg}>
+  //      <p class="fav-name">${showCurrentSerie}</p>
+  //       <img class="fav-img" src=${showCurrentImage}>
   //     </li>
   //   </ul>
 
   //   `
-  // favContainer.innerHTML += myFavs;
-}
+  // favContainer.innerHTML = myFavs;
+ }
 
 function startFavorites() {
   const listElements = document.querySelectorAll('.li-elements');
@@ -81,9 +77,9 @@ function showSerie() {
           itemImage = item.show.image.medium;
         }
         listSeries +=
-          `<li class="li-elements "data-name="${itemName}">
+          `<li class="li-elements" data-name="${itemName}">
              <h2 class="show-name" id="item-name">${itemName}</h2>
-             <img class="show-img" src=${itemImage} alt="${itemName}">
+             <img class="show-img" data-image="${itemImage}" src=${itemImage} alt="${itemName}">
            </li>`;
 
         list.innerHTML = listSeries;

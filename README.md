@@ -36,9 +36,9 @@ nuestra lista.
   X-generar una función nueva(showFavorite) que seleccione los elementos de la lista
   X-que cuando los pulses se añada una clase que los marque como favoritos (y cambie su scss)
 
-7 X-crear un array con las series favoritas seleccionadas
+7 X-crear un array con el nombre de las series favoritas seleccionadas
+  X-crear un array con la foto de las series favoritas seleccionadas
   X-que el array se muestre en pantalla debajo del formulario
-  -que el array incluya la imagen
   -inclur array + imagen en el dom bien
   -
   -Para terminar, si volvemos a realizar una nueva búsqueda, los favoritos se irán acumulando en
