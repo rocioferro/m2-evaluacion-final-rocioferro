@@ -8,6 +8,10 @@ const query = input.value;
 const endpoint = api + query;
 const altPicture = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 
+function pickFavorite(event) {
+  const currentSerie =event.currentTarget;
+  console.log(currentSerie);
+}
 
 
 function showSerie() {
@@ -23,15 +27,19 @@ function showSerie() {
         } else {
           itemImage = item.show.image.medium;
         }
-        listSeries += `<li class="li-elements"><h2 class="show-name">${itemName}</h2><img class="show-img" src=${itemImage}></li>`;
+        listSeries +=
+          `<li class="li-elements">
+             <h2 class="show-name">${itemName}</h2>
+             <img class="show-img" src=${itemImage}>
+           </li>`;
 
         list.innerHTML = listSeries;
+
         const listElements = document.querySelectorAll('.li-elements');
-        console.log(listElements);
-        listElements.addEventListener('click', pickFavorite);
-        function pickFavorite () {
-          console.log('what');
+        for (const item of listElements) {
+          item.addEventListener('click', pickFavorite);
         }
+
 
 
       }
