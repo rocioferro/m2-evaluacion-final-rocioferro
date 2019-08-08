@@ -8,9 +8,10 @@ XX1- html básico.
   -botón
   -ul para introducir los li en el dom
 
-2- crear un listener en el botón
--se redirige hacia lo escrito en el input
--hacer un fetch. recoge lo escrito en el inpuy y con eso rellena el enlace del fetch (hacer dos variables: una para la api en si y otra para el contenido. luego juntarlas en la url del fetch)
+2-
+Xcrear un listener en el botón
+Xse redirige hacia lo escrito en el input
+-hacer un fetch. recoge lo escrito en el input y con eso rellena el enlace del fetch (hacer dos variables: una para la api en si y otra para el contenido. luego juntarlas en la url del fetch)
 
 3-que lo que se obtenga de la api se pinte dentro de la ul en varios li (con clase + h2 + img) y se pinte en el dom (con innerhtml seguramente).
 -queryselectorall a cholón
