@@ -13,18 +13,19 @@ body {
   margin-left: 30px;}
 .result-list {
   list-style: none;
-  background-color: lightblue;
-  display: flex;
+   display: flex;
   flex-wrap: wrap;
-
+  margin: 20px;
 
 }
 .fav-list {
   list-style: none;
 }
 .li-elements {
-  margin-right:10px;
+  margin:10px;
   padding: 10px;
+  background-color: lightblue;
+  max-width: 250px;
 }
 .favorite {
   background-color: rgb(87, 131, 197);
@@ -43,8 +44,11 @@ body {
 .fav-elements {
   background-color: rgb(87, 131, 197);
   padding: 10px;
+  max-width: 200px;
 
 }
 .fav-img {
   height: 150px;
+
+
 }

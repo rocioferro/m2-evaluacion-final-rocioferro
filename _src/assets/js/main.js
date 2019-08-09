@@ -7,12 +7,12 @@ const api = 'http://api.tvmaze.com/search/shows?q=';
 const altPicture = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 const favContainer = document.querySelector('.favseries-container');
 let favSeries = [];
- if (localStorage.getItem('myFavSeries') !== null) {
+if (localStorage.getItem('myFavSeries') !== null) {
   favSeries = JSON.parse(localStorage.getItem('myFavSeries'));
- }
+}
 
-if (favSeries.length > 1 ){
-   for (let i=0; i<favSeries.length; i++) {
+if (favSeries.length > 1) {
+  for (let i = 0; i < favSeries.length; i++) {
     favContainer.innerHTML += `<ul class="fav-list">
       <li class="fav-elements">
          <h3 class="fav-name">${favSeries[i].name}</h2>
@@ -20,7 +20,7 @@ if (favSeries.length > 1 ){
        </li>
     </ul>`;
   }
- }
+}
 
 
 function pickFavorite(event) {
@@ -37,9 +37,10 @@ function pickFavorite(event) {
     //   // lo guardo en el array solo si no existe
     if (favSeries.includes(myObjects) === false) {
       favSeries.push(myObjects);
-    } }
-    for (const item of favSeries) {
-      listFavs +=
+    }
+  }
+  for (const item of favSeries) {
+    listFavs +=
       `<ul class="fav-list">
           <li class="fav-elements">
              <h3 class="fav-name">${item.name}</h2>
@@ -47,21 +48,21 @@ function pickFavorite(event) {
            </li>
         </ul>`;
 
-      favContainer.innerHTML = listFavs;
-    }
-    // LOCALSTORAGE
-    localStorage.setItem('myFavSeries', JSON.stringify(favSeries));
-    if (favContainer.innerHTML === ''){
-      for (let i=0; i<favSeries.length; i++) {
-        favContainer.innerHTML += `<ul class="fav-list">
+    favContainer.innerHTML = listFavs;
+  }
+  // LOCALSTORAGE
+  localStorage.setItem('myFavSeries', JSON.stringify(favSeries));
+  if (favContainer.innerHTML === '') {
+    for (let i = 0; i < favSeries.length; i++) {
+      favContainer.innerHTML += `<ul class="fav-list">
           <li class="fav-elements">
              <h3 class="fav-name">${favSeries[i].name}</h2>
              <img class="fav-img" src=${favSeries[i].image} alt="${showCurrentName}">
            </li>
         </ul>`;
-      }
-     }
+    }
   }
+}
 //  }
 function startFavorites() {
   const listElements = document.querySelectorAll('.li-elements');
