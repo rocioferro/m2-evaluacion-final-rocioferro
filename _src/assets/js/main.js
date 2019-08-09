@@ -23,14 +23,7 @@ if (favSeries.length > 1) {
   }
 }
 
-function eraseSerie () {
-  localStorage.clear('myFavSeries');
-  favContainer.innerHTML = '';
-
- }
-
 function pickFavorite(event) {
-  eraseSerie();
   let listFavs = '';
   const currentSerie = event.currentTarget;
   const currentName = currentSerie.querySelector('.show-name').innerHTML;
@@ -54,11 +47,11 @@ function pickFavorite(event) {
     favContainer.innerHTML = listFavs;
     }
 
-  printFavs();
+  // printFavs();
 
 }
 function printFavs () {
-  localStorage.setItem('myFavSeries', JSON.stringify(favSeries));
+
   if (favContainer.innerHTML === '') {
     for (let i = 0; i < favSeries.length; i++) {
       favContainer.innerHTML += `<ul class="fav-list">
@@ -69,6 +62,7 @@ function printFavs () {
         </ul>`;
     }
   }
+  localStorage.setItem('myFavSeries', JSON.stringify(favSeries));
 }
 function startFavorites() {
   const listElements = document.querySelectorAll('.li-elements');
@@ -109,6 +103,24 @@ function showSerie() {
 
 
 }
+
+function eraseSerie () {
+    localStorage.clear('myFavSeries');
+    favContainer.innerHTML = '';
+    printFavs();
+    // if (favSeries === null) {
+    //   for (let i = 0; i < favSeries.length; i++) {
+    //     favContainer.innerHTML +=
+    //     `<ul class="fav-list">
+    //       <li class="fav-elements">
+    //          <h3 class="fav-name">${favSeries[i].name}</h2>
+    //          <img class="fav-img" src=${favSeries[i].image}>
+    //        </li>
+    //     </ul>`
+    //   }
+    // }
+  }
+
 
 button.addEventListener('click', showSerie);
 erase.addEventListener('click',eraseSerie);
