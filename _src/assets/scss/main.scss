@@ -3,26 +3,35 @@
 
 body {
 	margin: 0;
-	height: 100vh;
+  height: 100vh;
+  background-color: azure;
 }
 .title {
   margin-left:30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .input {
   margin-left: 30px;}
 .result-list {
   list-style: none;
-  background-color: lightblue;
   display: flex;
   flex-wrap: wrap;
-  margin:10px;
 
 }
 .fav-list {
   list-style: none;
+
+}
+
+.fav-elements {
+  background-color:  rgb(87, 131, 197);
+  padding: 10px;
 }
 .li-elements {
   margin-right:10px;
+  background-color: lightblue;
+  padding: 10px;
+  margin: 10px;
 }
 .favorite {
   background-color: rgb(87, 131, 197);
@@ -36,4 +45,8 @@ body {
 .favseries-container {
   display: flex;
 
+}
+
+.fav-img {
+  height: 150px;
 }
