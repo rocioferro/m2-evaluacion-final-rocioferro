@@ -1,8 +1,8 @@
 Evaluación final módulo 2 rocioferro
 
-Aplicación web de búsqueda de series de tv
+Aplicación web de búsqueda de series de tv. Objetivos/pasos:
 
-XX1- html básico.
+X1- html básico.
   -h1 buscador de series
   -input
   -botón
@@ -22,7 +22,7 @@ Xhacer un fetch. recoge lo escrito en el input y con eso rellena el enlace del f
 
 
 6-
--que el usuario pueda seleccionar los elementos favoritos (ej 6 o 7 de fin de semana)
+-que el usuario pueda seleccionar los elementos favoritos
 Una vez aparecen los resultados de búsqueda, podremos indicar cuáles son nuestras series
 favoritas. Para ello, al hacer clic sobre un resultado el color de fondo y el de fuente se
 intercambian.
@@ -41,18 +41,16 @@ nuestra lista.
   X-que el array se muestre en pantalla debajo del formulario
   x-hacer que el array no se repita si ya ha sido seleccionado
   X-inclur array + imagen en el dom
-  -hacer que se muestren todas las que añado en el array de favs con un for
+  x-hacer que se muestren todas las que añado en el array de favs con un for
+
+
+8 X-guardarlo en localStorage
   -Para terminar, si volvemos a realizar una nueva búsqueda, los favoritos se irán acumulando en
 nuestra lista.
-
-
-
-8- guardarlo en localStorage
 
 9-maquetación
 
 10-borrar favoritos
-11-cambiar el contenido de alt picture en función del resultado? sé hacer eso?
 
 BORRAR VALUE DEL INPUT POR DEFECTO
 REVISAR LOS CONSOLE LOG Y EL CODIGO COMENTADO

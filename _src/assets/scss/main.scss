@@ -1,19 +1,31 @@
 @import 'core/settings';
 
 
-body {;
+body {
 	margin: 0;
 	height: 100vh;
 }
-
+.title {
+  margin-left:30px;
+}
+.input {
+  margin-left: 30px;}
 .result-list {
   list-style: none;
-  background-color: lemonchiffon;
+  background-color: lightblue;
+  display: flex;
+  flex-wrap: wrap;
   margin:10px;
-  width: 300px;
+
+}
+.fav-list {
+  list-style: none;
+}
+.li-elements {
+  margin-right:10px;
 }
 .favorite {
-  background-color: lightgreen;
+  background-color: rgb(87, 131, 197);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }

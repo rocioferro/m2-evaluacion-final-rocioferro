@@ -4,11 +4,24 @@ const input = document.querySelector('.input');
 const button = document.querySelector('.btn');
 const list = document.querySelector('.result-list');
 const api = 'http://api.tvmaze.com/search/shows?q=';
-const query = input.value;
-const endpoint = api + query;
 const altPicture = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
-let favSeries = [];
 const favContainer = document.querySelector('.favseries-container');
+let favSeries = [];
+ if (localStorage.getItem('myFavSeries') !== null) {
+  favSeries = JSON.parse(localStorage.getItem('myFavSeries'));
+ }
+
+if (favSeries.length > 1 ){
+   for (let i=0; i<favSeries.length; i++) {
+    favContainer.innerHTML += `<ul class="fav-list">
+      <li class="fav-elements">
+         <h3 class="fav-name">${favSeries[i].name}</h2>
+         <img class="fav-img" src=${favSeries[i].image} >
+       </li>
+    </ul>`;
+  }
+ }
+
 
 function pickFavorite(event) {
   let listFavs = '';
@@ -25,14 +38,6 @@ function pickFavorite(event) {
     if (favSeries.includes(myObjects) === false) {
       favSeries.push(myObjects);
     } }
-    // else {
-    //   // REVISAR ESTE CODIGO. NO ME LO QUITA EN EL DOM;ASOCIARLO a las variables
-    //   const index = favSeries.indexOf(myObjects);
-    //   if (index > -1) {
-    //     favSeries.splice(index, 1);
-    //   }
-
-    // }
     for (const item of favSeries) {
       listFavs +=
       `<ul class="fav-list">
@@ -45,7 +50,17 @@ function pickFavorite(event) {
       favContainer.innerHTML = listFavs;
     }
     // LOCALSTORAGE
-    localStorage.setItem(showCurrentName, JSON.stringify(showCurrentImage));
+    localStorage.setItem('myFavSeries', JSON.stringify(favSeries));
+    if (favContainer.innerHTML === ''){
+      for (let i=0; i<favSeries.length; i++) {
+        favContainer.innerHTML += `<ul class="fav-list">
+          <li class="fav-elements">
+             <h3 class="fav-name">${favSeries[i].name}</h2>
+             <img class="fav-img" src=${favSeries[i].image} alt="${showCurrentName}">
+           </li>
+        </ul>`;
+      }
+     }
   }
 //  }
 function startFavorites() {
@@ -58,6 +73,8 @@ function startFavorites() {
 
 function showSerie() {
   let listSeries = '';
+  const query = input.value;
+  const endpoint = api + query;
   fetch(endpoint)
     .then(response => response.json())
     .then(data => {
