@@ -22,20 +22,17 @@ function pickFavorite(event) {
   currentSerie.classList.toggle('favorite');
   if (currentSerie.classList.contains('favorite')) {
     //   // lo guardo en el array solo si no existe
-    if (favSeries.includes(showCurrentName) === false) {
+    if (favSeries.includes(myObjects) === false) {
       favSeries.push(myObjects);
-    }
-    else {
-      // REVISAR ESTE CODIGO. NO ME LO QUITA EN EL DOM;ASOCIARLO a las variables
-      const indexSerie = favSeries.indexOf(showCurrentName);
-      if (indexSerie > -1) {
-        favSeries.splice(indexSerie, 1);
-      }
-      const indexImg = favSeries.indexOf(showCurrentImage);
-      if (indexImg > -1) {
-        favSeries.splice(indexImg, 1);
-      }
-    }
+    } }
+    // else {
+    //   // REVISAR ESTE CODIGO. NO ME LO QUITA EN EL DOM;ASOCIARLO a las variables
+    //   const index = favSeries.indexOf(myObjects);
+    //   if (index > -1) {
+    //     favSeries.splice(index, 1);
+    //   }
+
+    // }
     for (const item of favSeries) {
       listFavs +=
       `<ul class="fav-list">
@@ -47,8 +44,10 @@ function pickFavorite(event) {
 
       favContainer.innerHTML = listFavs;
     }
+    // LOCALSTORAGE
+    localStorage.setItem(showCurrentName, JSON.stringify(showCurrentImage));
   }
-}
+//  }
 function startFavorites() {
   const listElements = document.querySelectorAll('.li-elements');
 
@@ -81,7 +80,7 @@ function showSerie() {
         startFavorites();
 
       }
-    })
+    });
 
 
 }
