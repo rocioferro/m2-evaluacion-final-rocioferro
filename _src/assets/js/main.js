@@ -7,6 +7,7 @@ const api = 'http://api.tvmaze.com/search/shows?q=';
 const altPicture = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 const favContainer = document.querySelector('.favseries-container');
 let favSeries = [];
+
 if (localStorage.getItem('myFavSeries') !== null) {
   favSeries = JSON.parse(localStorage.getItem('myFavSeries'));
 }
@@ -72,6 +73,21 @@ function startFavorites() {
   }
 }
 
+function showUrl (event) {
+  const currentElement = event.currentTarget;
+  console.log(currentElement.src);
+}
+
+function showImg() {
+  const chosenImages = document.querySelectorAll('.show-img');
+
+  for (const item of chosenImages) {
+    item.addEventListener('click',showUrl);
+
+  }
+}
+
+
 function showSerie() {
   let listSeries = '';
   const query = input.value;
@@ -82,6 +98,11 @@ function showSerie() {
       for (const item of data) {
         const itemName = item.show.name;
         let itemImage = item.show.image;
+        const itemGenre = item.show.genres;
+        let genreLi = '';
+        for (const item of itemGenre) {
+            genreLi += `<li class="genre-elements">${item}</li>`;
+        }
         if (itemImage === null) {
           itemImage = altPicture;
         } else {
@@ -90,14 +111,20 @@ function showSerie() {
         listSeries +=
           `<li class="li-elements" id="name-id" data-name="${itemName}">
              <h2 class="show-name" id="item-name">${itemName}</h2>
+             <ul class="genre-list"> ${genreLi}
+             </ul>
              <img class="show-img" data-image="${itemImage}" src=${itemImage} alt="${itemName}">
+
            </li>`;
 
-        list.innerHTML = listSeries;
 
-        startFavorites();
 
       }
+      list.innerHTML = listSeries;
+
+      startFavorites();
+      showImg();
+
     });
 
 
